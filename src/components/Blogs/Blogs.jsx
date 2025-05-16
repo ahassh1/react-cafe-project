@@ -16,7 +16,7 @@ const Blogs = () => {
         <div className='text-3xl'> 
              <h1>total: {blogs.length}</h1>
 
-             <div className="all-blogs">
+             <div className="all-blogs grid grid-cols-2">
         {
             blogs.map((blog) => <Blog blog={blog} key={blog.id}></Blog>)
         }
