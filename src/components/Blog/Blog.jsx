@@ -1,7 +1,7 @@
 import React from 'react';
 import { FaBookmark } from "react-icons/fa";
 
-const Blog = ({blog}) => {
+const  Blog = ({blog,handleBookMark}) => {
     // const {blog}= props
     // console.log(blog)
     return (
@@ -14,15 +14,18 @@ const Blog = ({blog}) => {
                     alt="Shoes" />
                 </figure>
                 <div className="card-body">
-                    <div className="author">
-                     <h1>{blog.author}</h1>
+                    <div className="author flex justify-around items-center">
+                     <h1 className='text-[15px] font-semibold'>{blog.author}</h1>
                      <img className='w-16' src={blog.author_img} alt="" />
+                     <button onClick={() => handleBookMark(blog)}>
+                          <FaBookmark  size={28}/>
+                     </button>
                     </div>
                     <h2 className="card-title">{blog.title}</h2>
                     <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
                        
                        <div className="flex">
-                  +eo  {
+                   {
                         blog.hashtags.map((has) => <p> {has}</p>)
                     }
                        </div>
